@@ -9,7 +9,7 @@ export function ViewTabs({ onTabChange }: ViewTabsProps) {
       className="w-[400px]"
       onValueChange={onTabChange}
     >
-      <TabsList>
+      <TabsList className="flex gap-2">
         <TabsTrigger value="dailyView">Daily View</TabsTrigger>
         <TabsTrigger value="monthlyView">Monthly View</TabsTrigger>
         <TabsTrigger value="statistics">Statistics</TabsTrigger>
