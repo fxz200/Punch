@@ -7,21 +7,21 @@ interface MainLayoutProps {
   children?: React.ReactNode;
 }
 
-const MainLayout: React.FC<MainLayoutProps> = () => {
+const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   // const [activeTab, setActiveTab] = useState("dailyView");
-  const activeTab = "dailyView"; // 預設為 dailyView
-  const renderContent = () => {
-    switch (activeTab) {
-      case "dailyView":
-        return <div>這是dailyView頁面內容</div>;
-      //   case "monthlyView":
-      //     return <div>這是monthlyView頁面內容</div>;
-      //   case "statistics":
-      //     return <div>這是statistics頁面內容</div>;
-      default:
-        return <div>請選擇一個頁面</div>;
-    }
-  };
+  // const activeTab = "dailyView"; // 預設為 dailyView
+  // const renderContent = () => {
+  //   switch (activeTab) {
+  //     case "dailyView":
+  //       return <div>這是dailyView頁面內容</div>;
+  //     //   case "monthlyView":
+  //     //     return <div>這是monthlyView頁面內容</div>;
+  //     //   case "statistics":
+  //     //     return <div>這是statistics頁面內容</div>;
+  //     default:
+  //       return <div>請選擇一個頁面</div>;
+  //   }
+  // };
   return (
     <div className="h-screen">
       <SidebarProvider>
@@ -31,7 +31,7 @@ const MainLayout: React.FC<MainLayoutProps> = () => {
             <div className="flex h-16 items-center justify-between py-4 px-3 sm:px-6 lg:px-8 max-w-[1700px] mx-auto">
               <div className="flex items-center gap-4">
                 <SidebarTrigger />
-                <div className="text-4xl font-bold tracking-tight">
+                <div className="text-3xl font-bold tracking-tight">
                   Punch-In Tracker
                 </div>
               </div>
@@ -42,7 +42,7 @@ const MainLayout: React.FC<MainLayoutProps> = () => {
             </div>
           </header>
 
-          <main className="flex-grow p-4">{renderContent()}</main>
+          <main className="flex-grow p-4">{children}</main>
         </div>
       </SidebarProvider>
     </div>
